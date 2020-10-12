@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenTK.Windowing.Desktop;
+using System;
 
 namespace TRShading
 {
@@ -6,7 +7,12 @@ namespace TRShading
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameWindowSettings gws = new GameWindowSettings();
+            NativeWindowSettings nws = new NativeWindowSettings();
+            nws.Size = new OpenTK.Mathematics.Vector2i(1000, 1000);
+            Game gameWindows = new Game(gws, nws);
+
+            gameWindows.Run();
         }
     }
 }
